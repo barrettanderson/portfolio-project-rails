@@ -1,0 +1,2 @@
+class FoodBanksController < ApplicationController
+end
