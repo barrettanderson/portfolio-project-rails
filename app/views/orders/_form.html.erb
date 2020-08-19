@@ -1,5 +1,9 @@
 <%= form_for order do |f| %>
     <div>
+        <%# <%= f.label food_bank_id %>
+        <%= f.collection_select(:food_bank_id, FoodBank.all, :location, :location) %> 
+    </div>
+        <div>
         <%= f.label :protein %>
         <%= f.text_field :protein %>
     </div><br>

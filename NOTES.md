@@ -1,7 +1,3 @@
-Questions during meeting
- 
-    Route when I create a new account
-    
 To Do
     scope method
     omniauth

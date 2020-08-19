@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+food_bank_list = [
+    "West Seattle",
+    "Ravenna",
+    "Central District",
+    "Ballard",
+    "Rainier Valley"
+]
+
+food_bank_list.each do |location|
+    FoodBank.create( location: location)
+end
