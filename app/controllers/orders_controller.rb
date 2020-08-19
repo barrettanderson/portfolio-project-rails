@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
         if @order.save
             redirect_to user_orders_path(current_user)
         else
+            flash[:notice] = "Missing item from order, fill in all options"
             render :new
         end
     end

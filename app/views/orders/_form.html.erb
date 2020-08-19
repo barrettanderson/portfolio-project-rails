@@ -1,11 +1,11 @@
 <%= form_for([current_user, order]) do |f| %>
     <div>
-        <%# <%= f.label food_bank_id %>
+        Select Food Bank Location <br>
         <%= f.collection_select(:food_bank_id, FoodBank.all, :id, :location) %> 
     </div><br>
     <div>
         <%= f.label :protein %>
-        <%= f.text_field :protein %>
+        <%= f.text_field :protein, :class => "new-order", :placeholder => "Enter Protein"  %>
     </div><br>
     <div>
         <%= f.label :vegetable %>
@@ -13,19 +13,19 @@
     </div><br>
     <div>
         <%= f.label :fruit %>
-        <%= f.text_field :fruit %>
+        <%= f.text_field :fruit, :class => "new-order", :placeholder => "Enter Fruit"  %>
     </div><br>
     <div>
         <%= f.label :grain %>
-        <%= f.text_field :grain %>
+        <%= f.text_field :grain, :class => "new-order", :placeholder => "Enter Grain"  %>
     </div><br>
     <div>
         <%= f.label :dairy %>
-        <%= f.text_field :dairy %>
+        <%= f.text_field :dairy, :class => "new-order", :placeholder => "Enter Dairy"  %>
     </div><br>
     <div>
         <%= f.label :dessert %>
-        <%= f.text_field :dessert %>
+        <%= f.text_field :dessert, :class => "new-order", :placeholder => "Dessert"  %>
     </div><br>
 
     <%= f.submit button_name %>
