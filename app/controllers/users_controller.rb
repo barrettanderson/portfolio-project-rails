@@ -11,6 +11,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path
         else
+            flash[:notice] = "Email already taken"
             render :new
         end
     end

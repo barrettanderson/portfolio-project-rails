@@ -1,13 +1,24 @@
 To Do
-    scope method
+    Associations - Food Bank is not aware of orders
+
+    scope method ideas
+        - List orders by user
+        - List orders by foodbank
+        
     omniauth
-    nested routes for orders -> users
     Your forms should correctly display validation errors.
         a. Your fields should be enclosed within a fields_with_errors class
+            Watch Avi video how he adds messages onto that div field.
         b. Error messages describing the validation failures must be present within the view.
 
+        Errors - 
+            When someone tries to sign up with an already used email
+            When someone logs in with wrong password
+            Incorrect password user has to retype their email.  How to fix this?
+    Association from FoodBank -> orders.  Is it already there correctly?  Don't think so.  How to associate these objects together.
 
-Food Bank Idea\
+
+Food Bank Idea
 at least has many
 at least one belongs_to
 
@@ -29,16 +40,6 @@ Models
     
     Foodbank
         t.string :location
-
-        Food bank might have bread
-
-        Join Table
-            Quantity is the join table?
-            How does quantity belong to both the user and the food bank?
-
-
-Artist Concert Idea
-
 
 Requirements
 Use the Ruby on Rails framework.

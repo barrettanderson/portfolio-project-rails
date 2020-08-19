@@ -1,16 +1,16 @@
 <h1>Orders</h1>
-
-<% @orders.each do |order| %>
-    <div>
-
-        <p><%= order.protein %></p>
-        <p><%= order.vegetable %></p>
-        <p><%= order.fruit %></p>
-        <p><%= order.grain %></p>
-        <p><%= order.dairy %></p>
-        <p><%= order.dessert %></p>
-    </div>
-
+<ul>
+    <% @orders.each do |order| %>
+        <div>
+            <%= link_to "Go to order", user_order_path(current_user, order.id) %>
+            <p><%= order.protein %></p>
+            <p><%= order.vegetable %></p>
+            <p><%= order.fruit %></p>
+            <p><%= order.grain %></p>
+            <p><%= order.dairy %></p>
+            <p><%= order.dessert %></p>
+        </div>
+</ul>
 
 <% end %>
 
