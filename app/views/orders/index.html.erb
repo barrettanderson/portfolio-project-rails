@@ -1,0 +1,16 @@
+<h1>Orders</h1>
+
+<%= @orders.each do |order| %>
+    <% binding.pry %>
+    <div>
+        <p><%= order.protein %></p>
+        <p><%= order.vegetable %></p>
+        <p><%= order.fruit %></p>
+        <p><%= order.grain %></p>
+        <p><%= order.dairy %></p>
+        <p><%= order.dessert %></p>
+    </div>
+
+
+<% end %>
+

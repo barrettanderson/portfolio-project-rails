@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
 
     def index
         @orders = Order.all
-
     end
 
     def new
@@ -11,11 +10,15 @@ class OrdersController < ApplicationController
     end
 
     def show
-
     end
 
     def create
-        
+        @order = Order.new(order_params)
+        if @order.save
+            redirect_to "/orders"
+        else
+            render :new
+        end
     end
 
     def edit
