@@ -1,0 +1,29 @@
+<%= form_for (order) do |f| %>
+    <div>
+        <%= f.label :protein %>
+        <%= f.text_field :protein %>
+    </div><br>
+    <div>
+        <%= f.label :vegetable %>
+        <%= f.text_field :vegetable %>
+    </div><br>
+    <div>
+        <%= f.label :fruit %>
+        <%= f.text_field :fruit %>
+    </div><br>
+    <div>
+        <%= f.label :grain %>
+        <%= f.text_field :grain %>
+    </div><br>
+    <div>
+        <%= f.label :dairy %>
+        <%= f.text_field :dairy %>
+    </div><br>
+    <div>
+        <%= f.label :dessert %>
+        <%= f.text_field :dessert %>
+    </div><br>
+
+    <%= f.submit button_name %>
+    
+<% end %>
