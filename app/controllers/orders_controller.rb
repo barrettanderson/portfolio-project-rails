@@ -13,7 +13,8 @@ class OrdersController < ApplicationController
     end
 
     def create
-        @order = Order.create(order_params)
+        # @order = Order.create(order_params)
+        @order = current_user.orders.build(order_params)
         if @order.save
             redirect_to orders_path
         else

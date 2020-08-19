@@ -1,3 +1,16 @@
+Questions during meeting
+ 
+    Route when I create a new account
+    
+To Do
+    scope method
+    omniauth
+    nested routes for orders -> users
+    Your forms should correctly display validation errors.
+        a. Your fields should be enclosed within a fields_with_errors class
+        b. Error messages describing the validation failures must be present within the view.
+
+
 Food Bank Idea\
 at least has many
 at least one belongs_to
