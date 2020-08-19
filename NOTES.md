@@ -4,7 +4,7 @@ To Do
     scope method ideas
         - List orders by user
         - List orders by foodbank
-        
+
     omniauth
     Your forms should correctly display validation errors.
         a. Your fields should be enclosed within a fields_with_errors class
@@ -14,7 +14,8 @@ To Do
         Errors - 
             When someone tries to sign up with an already used email
             When someone logs in with wrong password
-            Incorrect password user has to retype their email.  How to fix this?
+            When someone tries to visit a page that they are not logged in
+
     Association from FoodBank -> orders.  Is it already there correctly?  Don't think so.  How to associate these objects together.
 
 

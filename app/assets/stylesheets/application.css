@@ -14,4 +14,5 @@
  *= require_self
  *= require 'sessions'
  *= require 'orders'
+ *= require 'users'
  */

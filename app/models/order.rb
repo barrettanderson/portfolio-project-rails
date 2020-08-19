@@ -4,4 +4,5 @@ class Order < ApplicationRecord
 
     validates_presence_of :protein, :vegetable, :fruit, :grain, :dairy, :dessert
 
+
 end
