@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy", as: "logout"
 
   resources :food_banks
-  resources :orders
-  resources :users
+
+  resources :users do
+    resources :orders
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

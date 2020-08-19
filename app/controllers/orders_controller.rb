@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
         # @order = Order.create(order_params)
         @order = current_user.orders.build(order_params)
         if @order.save
-            redirect_to orders_path
+            redirect_to user_orders_path(current_user)
         else
             render :new
         end
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 
     def update
         if @order.update(order_params)
-            redirect_to order_path(@order)
+            redirect_to user_order_path(current_user, @order)
         else
             render :edit
         end
@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
 
     def destroy
         @order.destroy
-        redirect_to orders_path
+        redirect_to user_orders_path(current_user)
     end
 
     private
