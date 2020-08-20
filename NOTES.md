@@ -5,7 +5,9 @@ To Do
         - List orders by user
         - List orders by foodbank
 
-    omniauth
+    omniauth - stuck with some errors
+
+
     Your forms should correctly display validation errors.
         a. Your fields should be enclosed within a fields_with_errors class
             Watch Avi video how he adds messages onto that div field.
@@ -15,8 +17,6 @@ To Do
             When someone tries to sign up with an already used email
             When someone logs in with wrong password
             When someone tries to visit a page that they are not logged in
-
-    Association from FoodBank -> orders.  Is it already there correctly?  Don't think so.  How to associate these objects together.
 
 
 Food Bank Idea
