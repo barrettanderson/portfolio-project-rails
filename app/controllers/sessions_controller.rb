@@ -17,8 +17,10 @@ class SessionsController < ApplicationController
     end
 
     def facebook
+        binding.pry
         user = User.find_or_create_from_omniauth(auth)
-        session(:user_id) = user.id
+        session[:user_id] = user.id
+    
         redirect_to root_path
     end
 
@@ -33,6 +35,6 @@ class SessionsController < ApplicationController
         end
 
         def auth
-            request.env("omniauth.auth")
+            request.env["omniauth.auth"]
         end
 end
