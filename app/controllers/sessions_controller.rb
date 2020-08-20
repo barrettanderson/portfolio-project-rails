@@ -17,7 +17,6 @@ class SessionsController < ApplicationController
     end
 
     def facebook
-        binding.pry
         user = User.find_or_create_from_omniauth(auth)
         session[:user_id] = user.id
     
