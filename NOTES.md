@@ -1,11 +1,19 @@
 To Do
-    Associations - Food Bank is not aware of orders
-
     scope method ideas
         - List orders by user
         - List orders by foodbank
-
-    omniauth - stuck with some errors
+    Food Bank
+        scope :food_bank_orders, -> { Order.all.where("food_bank_id == self.id") }
+        scope :todays_orders, -> { self.food_bank_orders.where("created_at > ?", 0.days.ago) }
+        Validate based on if someone has made an order in the last week
+            class Post < ActiveRecord::Base
+                scope :recent, lambda { where('published_at >= ?', Time.now - 1.week) }
+            end
+end
+    User
+        List Orders for user
+        scope :my_orders, -> { where(Order.all.id = self.id) }
+        scope :most_recent_order, -> { self.my_orders.order(created_at: :desc LIMIT 1) }
 
 
     Your forms should correctly display validation errors.
