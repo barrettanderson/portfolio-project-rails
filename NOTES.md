@@ -4,7 +4,7 @@ To Do
         - List orders by foodbank
     Food Bank
         ** scope :food_bank_orders, -> { Order.all.where("food_bank_id == self.id") }
-        scope :todays_orders, -> { self.orders.where("created_at = ?", Date.today) }
+        scope :todays_orders, -> { self.orders.where("created_at = ?", Date.today) } (would  be losing the time of the order)
         
         Validate based on if someone has made an order in the last week
             class Post < ActiveRecord::Base
@@ -14,7 +14,7 @@ end
     User
         List Orders for user
         ** scope :my_orders, -> { where(Order.all.id = self.id) }
-        scope :most_recent_order, -> { self.my_orders.order(created_at: :desc LIMIT 1) }
+        scope :most_recent_order, -> { self.orders.order(created_at: :desc LIMIT 1) }
 
 
     Your forms should correctly display validation errors.
