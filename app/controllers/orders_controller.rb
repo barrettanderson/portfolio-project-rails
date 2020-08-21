@@ -10,6 +10,11 @@ class OrdersController < ApplicationController
     end
 
     def show
+        if current_user == @order.user
+            render :show
+        else
+            redirect_to root_path
+        end
     end
 
     def create
@@ -32,10 +37,14 @@ class OrdersController < ApplicationController
     end
 
     def update
-        if current_user == @order.user && @order.update(order_params)
-            redirect_to user_order_path(current_user, @order)
+        if current_user == @order.user 
+            if @order.update(order_params)
+                redirect_to user_order_path(current_user, @order)
+            else
+                render :edit
+            end
         else
-            render :edit
+            redirect_to root_path
         end
     end
 
