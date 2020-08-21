@@ -3,8 +3,9 @@ To Do
         - List orders by user
         - List orders by foodbank
     Food Bank
-        scope :food_bank_orders, -> { Order.all.where("food_bank_id == self.id") }
-        scope :todays_orders, -> { self.food_bank_orders.where("created_at > ?", 0.days.ago) }
+        ** scope :food_bank_orders, -> { Order.all.where("food_bank_id == self.id") }
+        scope :todays_orders, -> { self.orders.where("created_at = ?", Date.today) }
+        
         Validate based on if someone has made an order in the last week
             class Post < ActiveRecord::Base
                 scope :recent, lambda { where('published_at >= ?', Time.now - 1.week) }
@@ -12,7 +13,7 @@ To Do
 end
     User
         List Orders for user
-        scope :my_orders, -> { where(Order.all.id = self.id) }
+        ** scope :my_orders, -> { where(Order.all.id = self.id) }
         scope :most_recent_order, -> { self.my_orders.order(created_at: :desc LIMIT 1) }
 
 
@@ -20,11 +21,14 @@ end
         a. Your fields should be enclosed within a fields_with_errors class
             Watch Avi video how he adds messages onto that div field.
         b. Error messages describing the validation failures must be present within the view.
+            My errors are pretty basic.  It seems like I can't do the fields_with_errors for sign up.
+                But I could do it for the other one.
 
         Errors - 
             When someone tries to sign up with an already used email
             When someone logs in with wrong password
             When someone tries to visit a page that they are not logged in
+                Gives a syntax error instead of doing a rerouting or something.
 
 Styling
     Materialize

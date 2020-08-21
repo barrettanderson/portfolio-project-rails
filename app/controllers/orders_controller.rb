@@ -24,10 +24,15 @@ class OrdersController < ApplicationController
     end
 
     def edit
+        if current_user == @order.user
+            render :edit
+        else
+            redirect_to root_path
+        end
     end
 
     def update
-        if @order.update(order_params)
+        if current_user == @order.user && @order.update(order_params)
             redirect_to user_order_path(current_user, @order)
         else
             render :edit
@@ -35,8 +40,12 @@ class OrdersController < ApplicationController
     end
 
     def destroy
-        @order.destroy
-        redirect_to user_orders_path(current_user)
+        if current_user == @order.user
+            @order.destroy
+            redirect_to user_orders_path(current_user)
+        else
+            redirect_to root_path
+        end
     end
 
     private
