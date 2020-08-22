@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%# <%= render "layouts/nav" %> 
+  
     <% if flash[:error] %>
         <% flash[:error].each do |error| %>
           <div>
@@ -21,20 +21,22 @@
     <% if flash[:notice] %>
         <%= flash[:notice] %>
     <% end %>
-      <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
+    <nav class="orange accent-2">
+      <div class="container">
+        <ul class="right">
+          <li><%= link_to "Home", root_path %></li>
 
-        <% unless logged_in? %>
-          <li><%= link_to "Signup", signup_path %></li>
-          <li><%= link_to "Login", login_path %></li>
-          <li><%= link_to 'Log in with Facebook!', '/auth/facebook' %></li>
-        <% else %>
-        <li><%= link_to "Orders", user_orders_path(current_user) %></li>
-        <li><%= link_to "Create Order", new_user_order_path(current_user) %></li>
-        <li><%= link_to "Logout", logout_path, method: "delete" %></li>
-        <% end %>
-      </ul>
+          <% unless logged_in? %>
+            <li><%= link_to "Signup", signup_path %></li>
+            <li><%= link_to "Login", login_path %></li>
+            <li><%= link_to 'Log in with Facebook!', '/auth/facebook' %></li>
+          <% else %>
+          <li><%= link_to "Orders", user_orders_path(current_user) %></li>
+          <li><%= link_to "Create Order", new_user_order_path(current_user) %></li>
+          <li><%= link_to "Logout", logout_path, method: "delete" %></li>
+          <% end %>
+        </ul>
+      </div>
     </nav>
     
     <%= yield %>
