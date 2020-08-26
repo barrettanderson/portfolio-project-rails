@@ -1,0 +1,39 @@
+<%= form_for(@order, url: orders_as_admin_path) do |f| %>
+    <div>
+        Select Food Bank Location <br>
+        <%= f.collection_select(:food_bank_id, FoodBank.all, :id, :location) %> 
+    </div><br>
+    <div>
+        <%= f.label :protein %>
+        <div>
+        <%= f.text_field :protein, :class => "new-order", :placeholder => "Enter Protein"  %>
+        </div>
+    </div><br>
+    <div>
+        <%= f.label :vegetable %>
+        <%= f.text_field :vegetable, :class => "new-order", :placeholder => "Enter Vegetable" %>
+    </div><br>
+    <div>
+        <%= f.label :fruit %>
+        <%= f.text_field :fruit, :class => "new-order", :placeholder => "Enter Fruit"  %>
+    </div><br>
+    <div>
+        <%= f.label :grain %>
+        <%= f.text_field :grain, :class => "new-order", :placeholder => "Enter Grain"  %>
+    </div><br>
+    <div>
+        <%= f.label :dairy %>
+        <%= f.text_field :dairy, :class => "new-order", :placeholder => "Enter Dairy"  %>
+    </div><br>
+    <div>
+        <%= f.label :dessert %>
+        <%= f.text_field :dessert, :class => "new-order", :placeholder => "Dessert"  %>
+    </div><br>
+
+    <%= f.submit %>
+    
+<% end %>
+
+  <script> $(document).ready(function(){
+    $('select').formSelect();
+  }); </script>

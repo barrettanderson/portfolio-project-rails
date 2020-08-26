@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy", as: "logout"
 
   resources :food_banks do
-    resources :orders_as_admin, only: [:index, :new]
+    resources :orders_as_admin, only: [:index, :new, :create]
   end
 
   resources :orders_as_admin

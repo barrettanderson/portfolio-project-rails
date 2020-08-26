@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :current_foodbank
 
     private
         def current_user
@@ -9,5 +9,9 @@ class ApplicationController < ActionController::Base
 
         def logged_in?
             !!session[:user_id]
+        end
+
+        def current_foodbank
+            FoodBank.find_by_food_bank_id(params[:food_bank_id])
         end
 end
