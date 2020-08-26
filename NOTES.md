@@ -1,6 +1,8 @@
 To Do
     scope method ideas
         - List orders by user
+        Orders
+            Look at orders by user, food bank could look at user orders.  Route method.  FoodBank.orders by user.
         - List orders by foodbank
     Food Bank
         ** scope :food_bank_orders, -> { Order.all.where("food_bank_id == self.id") }
