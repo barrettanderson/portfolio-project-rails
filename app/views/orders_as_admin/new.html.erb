@@ -1,4 +1,4 @@
-<%= form_for(@order, url: orders_as_admin_path) do |f| %>
+<%= form_for(@order, url: orders_as_admin_index_path) do |f| %>
     <div>
         Select Food Bank Location <br>
         <%= f.collection_select(:food_bank_id, FoodBank.all, :id, :location) %> 

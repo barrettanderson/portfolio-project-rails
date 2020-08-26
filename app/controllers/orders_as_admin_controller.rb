@@ -9,7 +9,11 @@ class OrdersAsAdminController < ApplicationController
     end
 
     def new
-        @order = Order.new
+        if params[:food_bank_id]
+            @order = Order.new(food_bank_id: params[:food_bank_id])
+        else
+            @order = Order.new
+        end
     end
 
     def create
