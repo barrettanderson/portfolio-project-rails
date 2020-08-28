@@ -1,4 +1,15 @@
-<h1>Orders</h1>
+<h1>Orders</h1><br>
+    <div>
+        <ul>
+            <li><%= link_to "Admin - Add Order", new_orders_as_admin_path %></li>
+            <li><%= link_to "Admin - Add Order for FoodBank 1", new_food_bank_orders_as_admin_path(1) %></li>
+            <li><%= link_to "Admin - Add Order for FoodBank 2", new_food_bank_orders_as_admin_path(2) %></li>
+            <li><%= link_to "Admin - Add Order for FoodBank 3", new_food_bank_orders_as_admin_path(3) %></li>
+            <li><%= link_to "Admin - Add Order for FoodBank 4", new_food_bank_orders_as_admin_path(4) %></li>
+            <li><%= link_to "Admin - Add Order for FoodBank 5", new_food_bank_orders_as_admin_path(5) %></li>
+        <ul>
+    </div>
+
 <ul>
     <% @orders.each do |order| %>
         <div>

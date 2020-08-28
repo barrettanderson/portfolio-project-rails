@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
         end
 
         def current_foodbank
-            FoodBank.find_by_food_bank_id(params[:food_bank_id])
+            FoodBank.find_by(params[:food_bank_id])
         end
 end

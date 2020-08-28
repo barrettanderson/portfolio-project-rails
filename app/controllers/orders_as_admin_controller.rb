@@ -17,8 +17,9 @@ class OrdersAsAdminController < ApplicationController
     end
 
     def create
-        @order = Orders.create(order_params)
+        @order = Order.create(order_params)
         if @order.save
+            binding.pry
             redirect_to food_bank_orders_as_admin_index_path(current_foodbank)
         else
             flash[:notice] = "Missing item(s) from order, fill in all options"

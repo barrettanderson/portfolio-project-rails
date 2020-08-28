@@ -15,4 +15,5 @@
  *= require 'sessions'
  *= require 'orders'
  *= require 'users'
+ *= require 'orders_as_admin'
  */

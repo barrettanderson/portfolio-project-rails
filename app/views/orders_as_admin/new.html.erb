@@ -4,6 +4,17 @@
         <%= f.collection_select(:food_bank_id, FoodBank.all, :id, :location) %> 
     </div><br>
     <div>
+        Select User for Order <br>
+        <% User.all.each do |user| %>
+            <p>
+                <label>
+                    <%= f.radio_button(:user_id, user.id) %>
+                    <span><%= user.email %></span>
+                </label>
+            </p>
+        <% end %>
+    </div>
+    <div>
         <%= f.label :protein %>
         <div>
         <%= f.text_field :protein, :class => "new-order", :placeholder => "Enter Protein"  %>
@@ -37,3 +48,5 @@
   <script> $(document).ready(function(){
     $('select').formSelect();
   }); </script>
+
+  
